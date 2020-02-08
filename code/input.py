@@ -37,7 +37,7 @@ def read_input(file):
 
 
 if __name__ == '__main__':
-    file = 'data/e_high_bonus.in'
+    file = '../data/a_example.in'
     inp = read_input(file)
     print(len(inp[0]))
     # print([r.__str__() for r in list_of_rides])
