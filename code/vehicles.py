@@ -49,11 +49,11 @@ class Vehicle():
 if __name__ == '__main__':
     from rides import Ride
 
-    ride1 = Ride((2,0), (2,2), 0, 9, 2)
-    ride2 = Ride((1,2), (1,0), 0, 9, 2)
-    ride3 = Ride((0,0), (1,3), 2, 9, 2)
+    ride1 = Ride((2,0), (2,2), 0, 9, 2, 3)
+    ride2 = Ride((1,2), (1,0), 0, 9, 2, 2)
+    ride3 = Ride((0,0), (1,3), 2, 9, 2, 1)
 
-    vehicle = Vehicle()
+    vehicle = Vehicle(10)
 
     vehicle.add_ride(ride2)
 

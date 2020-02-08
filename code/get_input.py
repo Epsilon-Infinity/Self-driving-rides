@@ -10,12 +10,12 @@ def read_input(file):
 
     # append first ride
     a, b, x, y, s, f = list(map(int, fh.readline().strip().split()))
-    list_of_rides.append(Ride([a,b], [x,y], s, f, B))
+    list_of_rides.append(Ride([a,b], [x,y], s, f, B, 0))
 
-    for ride in range(N-1):
+    for rid in range(1, N):
         a, b, x, y, s, f = list(map(int, fh.readline().strip().split()))
         
-        ride = Ride([a,b], [x,y], s, f, B)
+        ride = Ride([a,b], [x,y], s, f, B, rid)
 
         # Insert Ride into sorted position
         inserted = False
@@ -33,7 +33,7 @@ def read_input(file):
         
         if not inserted:
             list_of_rides.append(ride)
-    return list_of_rides, T
+    return list_of_rides, F, T
 
 
 if __name__ == '__main__':
