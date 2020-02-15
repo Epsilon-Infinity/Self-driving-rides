@@ -22,15 +22,15 @@ def solver(inputs):
     return sol
 
 
-def simulatedAnnealingSolver(inputs, T=10, n_iter=10000, temp_update=.9):
+def simulatedAnnealingSolver(inputs, T=100, n_iter=10000, temp_update=.9):
     if inputs["rides"] < 100:
-        n_iter = 1000
+        n_iter = 300
         temp_update = .9
-    elif inputs["rides"] < 10000:
+    elif inputs["rides"] < 1000:
         n_iter = 1000
         temp_update = .95
     else:
-        n_iter = 100000
+        n_iter = 5000
         temp_update = .99
     model = SimulatedAnnealing(inputs, T=T, n_iter=n_iter, temp_update=temp_update)
     model.fit()

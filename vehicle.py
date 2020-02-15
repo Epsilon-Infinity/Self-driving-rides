@@ -17,7 +17,8 @@ class Vehicle:
         return score, finish_step
 
     def assign(self, ride):
-        self.timer.step(self.distance(self.loc ,ride.ride_from ) +ride.distance)
+
+        self.timer.step(max(ride.earlist_start-self.timer.get_time() ,self.distance(self.loc ,ride.ride_from ) )+ ride.distance)
         self.step = self.get_finish_step(ride)
         self.rides.append(ride)
         self.loc = ride.to

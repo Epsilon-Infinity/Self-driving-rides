@@ -2,7 +2,8 @@ from timer import Timer
 from ride import Ride
 from vehicle import Vehicle
 
-class Simulator():
+
+class Simulator:
     def __init__(self, solution: dict, data):
         self.solution = solution
 
@@ -34,4 +35,3 @@ class Simulator():
                 if len(all_rides[i].intersection(all_rides[j])) != 0:
                     return False
         return True
-
