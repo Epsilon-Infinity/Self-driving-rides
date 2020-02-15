@@ -9,11 +9,11 @@ class Ride:
         self.idx = idx
 
     def compute_dist(self, loc1, loc2):
-        return abs(sum(loc1) - sum(loc2))
+        return abs(loc1[0]-loc2[0])+abs(loc1[1]-loc2[1])
 
     def __eq__(self, other):
-        return compute_dist(self.ride_from, other.ride_from) == 0 and \
-            compute_dist(self.to, other.to) == 0
+        return self.compute_dist(self.ride_from, other.ride_from) == 0 and \
+            self.compute_dist(self.to, other.to) == 0
 
     def __lt__(self, other):
         this, o = sum(self.ride_from), sum(other.ride_from)

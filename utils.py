@@ -10,8 +10,8 @@ def read_file(file_path):
         return {'rows':rows, columns:'columns', 'vehicles':vehicles,\
              'rides':rides, 'bonus':bonus, 'steps':steps, 'rides_list':rides_list}
 
-def solve_files(dir, solver):
-    result_dir = os.path.join(dir,"..","result")
+def solve_files(dir, out_dir,solver):
+    result_dir = os.path.join(out_dir,"result")
     if not os.path.exists(result_dir):
         os.makedirs(result_dir)
 
