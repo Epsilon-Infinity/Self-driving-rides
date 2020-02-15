@@ -21,16 +21,16 @@ class SimulatedAnnealing:
         self.solution = self.get_random_solution()
 
         simulator = Simulator(self.solution, self.data)
-        if not simulator.validate():
-            print("Something is wrong with solution")
+        # if not simulator.validate():
+        #     print("Something is wrong with solution")
         self.cur_score = simulator.start()
 
     def fit(self):
         for iteration in range(self.n_iter):
             candidate_solution = self.get_random_solution(self.solution)
             simulator = Simulator(candidate_solution, self.data)
-            if not simulator.validate():
-                print("Something is wrong with candidate solution")
+            # if not simulator.validate():
+            #     print("Something is wrong with candidate solution")
             score = simulator.start()
             if score >= self.cur_score:
                 self.solution = candidate_solution
